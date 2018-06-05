@@ -14,18 +14,14 @@ var fc
 
 
 var icons ={
-    "Clouds": "img/cloudy.png",
-    "Rain": "img/rain.png",
-    "Snow": "img/snow.png",
-    "Mist": "img/cloudy.png",
-    
+    "Clouds": "img/cloudy.png"
 }
 
 
 
 // difine functions
 function iconSelector(weather) {
-    return icons[weather]
+    
 }
 function celsToFaren(cel) {
     return Math.round((cel * 9/5) + 32)

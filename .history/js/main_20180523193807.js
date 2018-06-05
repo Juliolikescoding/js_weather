@@ -14,11 +14,7 @@ var fc
 
 
 var icons ={
-    "Clouds": "img/cloudy.png",
-    "Rain": "img/rain.png",
-    "Snow": "img/snow.png",
-    "Mist": "img/cloudy.png",
-    
+    "Clouds": "img/cloudy.png"
 }
 
 
