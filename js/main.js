@@ -1,41 +1,45 @@
 // define vars
-var ROOT_URL = 'http://api.openweathermap.org/data/2.5/weather?zip='
-var API_KEY = 'b576731816aeb0e680476dadcd9f35ab'
+var ROOT_URL = 'http://api.openweathermap.org/data/2.5/weather?q=';
+var API_KEY = 'b576731816aeb0e680476dadcd9f35ab';
 
-var title = document.querySelector(`.cityTitle`)
-var zip = document.querySelector(`.zip`)
-var weather = document.querySelector(`.weather`)
-var icon = document.querySelector(`.icon`)
-var temp = document.querySelector(`.temp`)
-var humid = document.querySelector(`.humid`)
-var deg = document.querySelector(`.deg`)
-var convert= document.querySelector(`.convert`)
-var fc
+var title = document.querySelector(`.cityTitle`);
+var zip = document.querySelector(`.zip`);
+var weather = document.querySelector(`.weather`);
+var icon = document.querySelector(`.icon`);
+var temp = document.querySelector(`.temp`);
+var humid = document.querySelector(`.humid`);
+var deg = document.querySelector(`.deg`);
+var convert = document.querySelector(`.convert`);
+var fc;
 
 
-var icons ={
+var icons = {
     "Clouds": "img/cloudy.png",
     "Rain": "img/rain.png",
     "Snow": "img/snow.png",
     "Mist": "img/cloudy.png",
-    
-}
+
+};
 
 
 
 // difine functions
 function iconSelector(weather) {
     return icons[weather]
-}
+};
+
 function celsToFaren(cel) {
-    return Math.round((cel * 9/5) + 32)
-}
-function farenToCelsius(far){
-    return Math.round((far - 32) * (5/9))
-}
-function kelvinToFaren(kelvin){
-    return Math.round(kelvin * 9/5 - 459.67)
-}
+    return Math.round((cel * 9 / 5) + 32)
+};
+
+function farenToCelsius(far) {
+    return Math.round((far - 32) * (5 / 9))
+};
+
+function kelvinToFaren(kelvin) {
+    return Math.round(kelvin * 9 / 5 - 459.67)
+};
+
 function getWeather(zipCode) {
     console.log(zipCode)
     $.ajax({
@@ -45,7 +49,7 @@ function getWeather(zipCode) {
         success: function (data) {
             console.log(data)
             title.textContent = data.name
-            weather.textContent=data.weather[0].main
+            weather.textContent = data.weather[0].main
             icon.src = iconSelector(data.weather[0].main)
             temp.textContent = kelvinToFaren(data.main.temp)
             humid.textContent = data.main.humidity
@@ -60,17 +64,17 @@ function getWeather(zipCode) {
 
 
 
-getWeather('33172')
+getWeather('33133')
 
 // call function and/or addeventlisteners
 zip.addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
-        getWeather(zip.value)
+        getWeather(city.value)
     }
 })
 
-convert.addEventListener('click', function(e){
-    if(fc === "F"){
+convert.addEventListener('click', function (e) {
+    if (fc === "F") {
         temp.textContent = farenToCelsius(temp.textContent)
         deg.innerHTML = " &deg; C"
         convert.textContent = "Convert to F"

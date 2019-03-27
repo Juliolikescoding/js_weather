@@ -3,10 +3,10 @@ body{
     margin: 0;
     text-align: center;
     font-family: 'Raleway', sans-serif;
-    color: coral; /* 1st */
+    color: navy; 
     background: url('http://cdn.abclocal.go.com/images/kgo/cms_exf_2007/news/technology/9495697_1280x720.jpg'); /* 2 */
-    background-repeat: no-repeat; /* 3 */
-    background-size: 100% 100%; /* 4 */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .cityTitle{
@@ -22,12 +22,12 @@ body *{
     max-height: 300px;
     min-height: 300px;
 }
-button:hover{ /* 5 */
-    border: 1px dashed firebrick; /* 6 */
-    background-color: blueviolet; /* 7 */
-    border-radius: 50% 50%; /* 8 */
-    color: yellow; /* 9 */
-    font-style: oblique; /* 10 */
+button{ 
+    border: 1px dashed firebrick; 
+    background-color: blueviolet; 
+    border-radius: 50% 50%; 
+    color: yellow; 
+    font-style: oblique; 
 
 }
 
